@@ -19,7 +19,7 @@ run File
 P1 : Move using arrow keys
      Attack with Spacebar
      Ultimate Move : 'm'
-P2 is currently a cpu and eill move on its own
+P2 is currently a cpu and will move on its own
 This progect is a work in progress and is not yet complete, players can b pushed off boundaries during attacks
 
 # Sources
