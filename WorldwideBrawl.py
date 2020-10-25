@@ -131,12 +131,10 @@ class player():
             self.walkCount  =0
             
         if self.standing and self.wasLeft and self.attack:
-        #    print("Hi Im Dave")
           # if self.standing and self.wasLeft and self.attack and not self.Right and not self.Left:
                 
              if self.attackCount<12 and self.attackNum==1 :
                     self.attackBreak=0
-                  #  print("Yabadabadooo")
                     self.height=luffAttackL[self.attackCount//4].get_height()
                     self.width=luffAttackL[self.attackCount//4].get_width()
                     win.blit(luffAttackL[self.attackCount//4],(self.x,self.y))
@@ -153,7 +151,6 @@ class player():
                         self.attack=False
                        # self.wasRight=True
                        # self.attackCount=0
-                     #   print("ay")
              elif self.attackCount<27 and self.attackNum==2:
                     self.height=luffAttackL2[self.attackCount//3].get_height()
                     self.width=luffAttackL2[self.attackCount//3].get_width()
@@ -161,7 +158,6 @@ class player():
                     if self.attackCount==6:
                         
                         storm.play()
-                    #    print("ewrgtyrefw")
                     if self.attackCount==26:
                         self.attackDone=True
                       #  self.attackCount=0
@@ -169,11 +165,9 @@ class player():
                         self.attack=False
                       #  self.wasRight=True
                         
-                    #    print("BEEEF")
                    # self.attack=False
              elif self.attackCount <24 and self.attackNum==3:
                #     print("iiiiii",self.attackCount)
-                 #   print("aaaaaaa",self.attackCount//3)
                     self.height=luffAttackL3[self.attackCount//3].get_height()
                     self.width=luffAttackL3[self.attackCount//3].get_width()
                     win.blit(luffAttackL3[self.attackCount//3],(self.x,self.y))
@@ -195,7 +189,6 @@ class player():
                         egun.set_volume(1)
                         egun.play()
                         
-                   #     print("sefgertewfrgfed")
                     if self.attackCount//3==10:
                         self.x-=40
                     if self.attackCount//3==9:
@@ -230,11 +223,9 @@ class player():
                    #     self.wasRight=True
             
         elif self.standing and self.wasRight and self.attack:
-         #   print("Lil Dicky")
         
                 
              if self.attackCount<12 and self.attackNum==1 :
-                  #  print("Yabadabadooo")\
                     self.attackBreak=0
                     self.height=luffAttack[self.attackCount//4].get_height()
                     self.width=luffAttack[self.attackCount//4].get_width()
@@ -261,7 +252,6 @@ class player():
                     if self.attackCount==6:
                         
                         storm.play()
-                    #    print("ewrgtyrefw")
                     if self.attackCount==26:
                         self.attackDone=True
                       #  self.attackCount=0
@@ -269,11 +259,9 @@ class player():
                         self.attack=False
                         self.wasRight=True
                         
-                    #    print("BEEEF")
                    # self.attack=False
              elif self.attackCount <24 and self.attackNum==3:
-               #     print("iiiiii",self.attackCount)
-                 #   print("aaaaaaa",self.attackCount//3)
+              
                     self.height=luffAttack3[self.attackCount//3].get_height()
                     self.width=luffAttack3[self.attackCount//3].get_width()
                     win.blit(luffAttack3[self.attackCount//3],(self.x,self.y))
@@ -295,7 +283,6 @@ class player():
                         egun.set_volume(1)
                         egun.play()
                         
-                   #     print("sefgertewfrgfed")
                     if self.attackCount//3==10:
                         self.x+=40
                     if self.attackCount//3==9:
@@ -372,10 +359,8 @@ class player():
                     win.blit(self.tempBg,(0,0))
                     
         else:
-            #print("Ok Boomer")
             
             if self.hit and not self.Fall:
-                print("What is going on?")
                 win.blit(self.hitImage,(self.x,self.y))
                 
                 if enemy.attackNum==2:
@@ -393,14 +378,12 @@ class player():
                     if self.hitCount==12:
                             self.damage+=normAttack
                      #   if self.hitCount==15:
-                     #       print("wegvbrewdfewqdfew")
                         #    self.hitCount=0
                         #    self.hit=False
                   #      self.hitSide=None
                 elif enemy.attackNum ==4:
                     
                     if self.hitCount<16:     
-                     #   print("des",self.hitCount,self.hitCount//4)
                         win.blit(hitEffect2[self.hitCount//4],(self.x-10,self.y-30))
                     if self.hitCount==12:
                             self.damage+=normAttack
@@ -411,54 +394,40 @@ class player():
                             
             elif  self.Fall: #'''not self.hit and '''self.Fall:
             
-                print("YEaaaaaaaa")      
                 if self.y>=math.floor(screenWidth-self.width-10) and not self.fallCheck:
                     self.fallCount=11
-                    print("NOOOOOOO")
                     self.fallCheck=True
                 if self.fallCount<=10:
                     
-                    print("I AM HERE")
                     self.x=self.fallXList[self.fallCount]
                     self.y=self.fallYList[self.fallCount]
                     if self.hitImage==LuffHit:
-                #        print("WE Good", self.fallXList,self.fallYList)
                         win.blit(LuffFall,(self.x,self.y))
                     elif self.hitImage==LuffHitR:
-                  #      print("MISTAKE??")
                         win.blit(LuffFalll,(self.x,self.y))
                     self.fallCount+=1
-                #    print("this:", self.fallCount)
                 elif self.fallCount>10 and self .fallCount<=34:
                     if self.hitImage==LuffHit:
-                  #     print("WTFFFF")
                        win.blit(LuffFall,(self.x,self.y))
                     elif self.hitImage==LuffHitR:
                         win.blit(LuffFalll,(self.x,self.y))
-                  #  print("yoooooooooooo",self.fallCount)
                     self.fallCount+=1
-                   # print("yip",self.fallCount)
                 if self.fallCount==15:
                     self.fallExpCount=1
                 if self.fallCount==35:
-                  #  print("ya",self.fallCount)
                     self.backUp=True
                     self.hit=False
                     self.hitSide=None
-                    #pygame.display.update()
                               
                 if self.backUp :#and self.startFall:
-                    print("here", self.backUpCount)
                     if self.hitImage==LuffHitR:
                    
-                        print("asjnbcjkasbkjsndakj")
                         if self.backUpCount%2==0:
                             self.x==2
                             self.y-=5
                         win.blit(LuffGetUpR[self.backUpCount//2],(self.x,self.y))
                     elif self.hitImage==LuffHit:
                      
-                        print("sdjkfskdj")
                         if self.backUpCount%2==0:
                             self.x+=2
                             self.y-=5
@@ -482,21 +451,16 @@ class player():
                        
                        
             elif self.Left==False and self.Right==False:
-             #   print("NIOOOO",self.wasRight,self.wasLeft)
                 if self.wasLeft:
                     self.height=leftImage.get_height()
                     self.width=leftImage.get_width()
                     win.blit(leftImage,(self.x,self.y))
-              #      print("Beans")
                       
                 if self.wasRight:
                     self.height=rightImage.get_height()
                     self.width=rightImage.get_width()
                     win.blit(rightImage,(self.x,self.y))
-               #     print("Fries"
-        print("Sasfdsf",self.standing,self.Right,self.Left)  
         if not self.standing:
-            print("MACINA")
             if self.Left:
                 self.height=walkLeft[self.walkCount//3].get_height()
                 self.width=walkLeft[self.walkCount//3].get_width()
@@ -504,7 +468,6 @@ class player():
                 
                 self.walkCount+=1
             if self.Right:
-                print("TMTDK BROOOOO",self.walkCount)
                 self.height=walkRight[self.walkCount//3].get_height()
                 self.width=walkRight[self.walkCount//3].get_width()
                 win.blit(walkRight[self.walkCount//3],(self.x,self.y))
@@ -526,15 +489,11 @@ class player():
             self.hitImage=LuffHitR
             self.height=LuffHit.get_height()
             self.width=LuffHit.get_width()
-            #self.x-=20
-        #    print("yiiiiiii")
-          #  win.blit(AmHitL,(self.x,self.y))
+      
             punch.play()
-          #  print("heeeeee")
             self.hitSide="Right"
         elif enemy.attack and (enemy.x<=self.x+self.width +5  and enemy.x>= self.x) and self.hitSide !="Right" :
             self.x=enemy.x-enemy.width/2
-           # self.x=player.x+player.width
             self.height=LuffHitR.get_height()
             self.width=LuffHitR.get_width()
             self.hitImage=LuffHit
@@ -544,13 +503,10 @@ class player():
                 self.x+=15
             if enemy.attackNum==3 and enemy.attackCount==13:
                 self.y-=35
-           # player.x+=6a
-           # win.blit(AmHit,(self.x,self.y))
-          #  print("hooooo")
+        
             punch.play()
             self.hitSide="Left"
         if self.hit:
-         #   print("Sekai")
             self.hitCount+=1
         if self.hitCount==30:
             self.hitCount=0
@@ -644,33 +600,24 @@ class enemy():
             self.walkCount  =0
 
         if self.standing and self.wasLeft and self.attack and not self.Right and not self.Left:
-        #    print("Hi Im Dave")
-      #      print("attackNum: {}, attackCount {}".format(self.attackNum,self.attackCount))
             tempNum=self.attackNum
-            #if (self.attackCount>14 and self.attackNum==1) or (self.attackCount>19 and self.attackNum==2) or (self.attackCount>14 and self.attackNum==3) or (self.attackCount>23 and self.attackNum==4):
-            #    self.attackCount=0
-              #  self.attackNum=tempNum
+            
             if self.attackCount<15 and self.attackNum==1 :
-          #      print("Yabadabadooo")
                 self.attackBreak=0
                 self.height=AmAttack[self.attackCount//5].get_height()
                 self.width=AmAttack[self.attackCount//5].get_width()
                 win.blit(AmAttack[self.attackCount//5],(self.x,self.y))
-                   #     if self.attackCount==1:
-                           # self.attackCount+=1
+                  
                 if self.attackCount==2:
                     channel=pygame.mixer.find_channel()
                     AmLaugh.set_volume(0.5)
-                           # print("heee")
                     AmLaugh.play()
                            
                 if self.attackCount==14:
                     self.attackDone=True
                     self.attack=False
                     self.wasLeft=True
-                           # self.attackCount=0
-                       #     print("ay")
-                
+                         
                         
             elif self.attackCount<20 and self.attackNum==2:
                 self.height=AmAttack2[self.attackCount//4].get_height()
@@ -679,7 +626,6 @@ class enemy():
                 if self.attackCount==2:
                         
                     AmShout.play()
-                       # print("ewrgtyrefw")
                 if self.attackCount==19:
                     self.attackDone=True
                       #  self.attackCount=0
@@ -687,11 +633,9 @@ class enemy():
                     self.attack=False
                        # self.wasRight=True
                         
-                     #   print("BEEEF")
                    # self.attack=False
             elif self.attackCount <15 and self.attackNum==3:
-               #     print("iiiiii",self.attackCount)
-               #     print("aaaaaaa",self.attackCount//3)
+              
                 self.height=AmAttack3[self.attackCount//5].get_height()
                 self.width=AmAttack3[self.attackCount//5].get_width()
                 win.blit(AmAttack3[self.attackCount//5],(self.x,self.y))
@@ -700,10 +644,8 @@ class enemy():
                 Amsmash.set_volume(0.1 )
                 if self.attackCount==14:
                     self.attackDone=True
-                    #    self.attackCount=0
-                     #   self.attackNum=0
+            
                     self.attack=False
-                   #     self.wasRight=True
                        
             elif self.attackCount<24 and self.attackNum==4:
                  
@@ -724,7 +666,6 @@ class enemy():
                 win.blit(AmAttack4[self.attackCount//4],(self.x,self.y))
                 
                 if self.attackCount==20 and player.hit:
-                        print("Starting")
                         for x in range(-100,1,10):
                             y=1/player.y*x*x+player.y
                             tempX=player.x+x
@@ -733,15 +674,9 @@ class enemy():
                         player.fallXList.reverse()
                         player.fallYList.reverse()
                         
-                        #for count in range(20):
-                           # self.x=enemy.fallXList[count]
-                         #   self.y=enemy.fallYList[count]
-                         #   win.blit(AmFall,(self.x,self.y))
-                          #  pygame.display.update()
-                        print("I AM FINALLY DONE")
+                       
                         player.Fall=True 
                         player.hit=False
-                       # print("Boom Baby!!")
                 if self.attackCount==23:
                     self.attackDone=True
                     self.attackCount=0
@@ -751,16 +686,13 @@ class enemy():
                     self.wasRight=False
                     pygame.mixer.stop()
                     self.attackBreak+=1
-            ##HEEEERE
             
         elif self.standing and self.wasRight and self.attack:
-         #   print("Lil Dicky")
         
                 
             if self.attackCount<15 and self.attackNum==1 :
                 
                 self.attackBreak=0
-                       #     print("Yabadabadooo")
                 self.height=AmrAttack[self.attackCount//5].get_height()
                 self.width=AmrAttack[self.attackCount//5].get_width()
                 win.blit(AmrAttack[self.attackCount//5],(self.x,self.y))
@@ -769,7 +701,6 @@ class enemy():
                 if self.attackCount==2:
                     channel=pygame.mixer.find_channel()
                     AmLaugh.set_volume(0.5)
-                           # print("heee")
                     AmLaugh.play()
                            
                 if self.attackCount==14:
@@ -777,7 +708,6 @@ class enemy():
                     self.attack=False
                     self.wasRight=True
                            # self.attackCount=0
-                       #     print("ay")
                 
                         
             elif self.attackCount<20 and self.attackNum==2:
@@ -795,11 +725,8 @@ class enemy():
                     self.attack=False
                        # self.wasRight=True
                         
-                     #   print("BEEEF")
                    # self.attack=False
             elif self.attackCount <15 and self.attackNum==3:
-               #     print("iiiiii",self.attackCount)
-               #     print("aaaaaaa",self.attackCount//3)
                 self.height=AmrAttack3[self.attackCount//5].get_height()
                 self.width=AmrAttack3[self.attackCount//5].get_width()
                 win.blit(AmrAttack3[self.attackCount//5],(self.x,self.y))
@@ -831,13 +758,11 @@ class enemy():
                 win.blit(AmrAttack4[self.attackCount//4],(self.x,self.y))
                 
                 if self.attackCount==20 and player.hit:
-                        print("Starting")
                         for x in range(0,101,10):
                             y=1/player.y*x*x+player.y
                             tempX=player.x+x
                             player.fallXList.append(tempX)
                             player.fallYList.append(y)
-                        print("DOneeee BIIITCH")
                         #for count in range(20):
                            # self.x=enemy.fallXList[count]
                          #   self.y=enemy.fallYList[count]
@@ -856,7 +781,6 @@ class enemy():
                         #self.wasRight=False
                     pygame.mixer.stop()
         else:
-           # print("Ok Boomer")
             if self.hit:
                 win.blit(self.hitImage,(self.x,self.y))
                 if player.ult and player.ultCount==322:
@@ -877,14 +801,12 @@ class enemy():
                         if self.hitCount==12:
                             enemy.damage+=normAttack
                       #  if self.hitCount==15:
-                     #       print("wegvbrewdfewqdfew")
                         #    self.hitCount=0
                         #    self.hit=False
                   #      self.hitSide=None
                 elif player.attackNum ==4:
                     
                     if self.hitCount<16:     
-                     #   print("des",self.hitCount,self.hitCount//4)
                         win.blit(hitEffect2[self.hitCount//4],(self.x-10,self.y-30))
                         if self.hitCount==12:
                             enemy.damage+=normAttack
@@ -907,7 +829,6 @@ class enemy():
                             self.hitCount==0
                             #self.hit=False
                             self.hitSide=None
-                    print("ok",self.fallCount)
                     '''
             elif  self.Fall: #'''not self.hit and '''self.Fall:
             
@@ -917,7 +838,6 @@ class enemy():
                     self.fallCheck=True
                 if self.fallCount<=10:
                    
-                    print("hhhhhh", self.fallCount)
                     self.x=self.fallXList[self.fallCount]
                     self.y=self.fallYList[self.fallCount]
                     if self.hitImage==AmHitL:
@@ -925,26 +845,21 @@ class enemy():
                     elif self.hitImage==AmHit:
                         win.blit(AmFall,(self.x,self.y))
                     self.fallCount+=1
-                    print("this:", self.fallCount)
                 elif self.fallCount>10 and self .fallCount<=34:
                     if self.hitImage==AmHitL:
                        win.blit(AmFalll,(self.x,self.y))
                     elif self.hitImage==AmHit:
                         win.blit(AmFall,(self.x,self.y))
-                    print("uyt",self.fallCount)
                     self.fallCount+=1
-                    print("yip",self.fallCount)
                 if self.fallCount==15:
                     self.fallExpCount=1
                 if self.fallCount==35:
-                    print("ya",self.fallCount)
                     self.backUp=True
                     self.hit=False
                     self.hitSide=None
                     #pygame.display.update()
                               
                 if self.backUp and self.startFall:
-                    print("here", self.backUpCount)
                     if self.hitImage==AmHit:
                         if self.backUpCount%3==0:
                             self.x+=2
@@ -975,18 +890,15 @@ class enemy():
                         
                 #self.Fall=False
             elif self.Left==False and self.Right==False:
-             #   print("NIOOOO",self.wasRight,self.wasLeft)
                 if self.wasLeft:
                     self.height=Aml.get_height()
                     self.width=Aml.get_width()
                     win.blit(Aml,(self.x,self.y))
-              #      print("Beans")
                   #  hitImage=AmHitL
                 if self.wasRight:
                     self.height=Amr.get_height()
                     self.width=Amr.get_width()
                     win.blit(Amr,(self.x,self.y))
-               #     print("Fries")
                    ## hitImage=AmHit
             
         if not self.standing:
@@ -1011,15 +923,12 @@ class enemy():
             if player.attackNum==2 or player.attackNum==3:
                 self.x-=self.width/2
             self.hit=True
-            print("Im a cowboy")
             self.hitImage=AmHitL
             self.height=AmHitL.get_height()
             self.width=AmHitL.get_width()
             #self.x-=20
-        #    print("yiiiiiii")
           #  win.blit(AmHitL,(self.x,self.y))
             punch.play()
-          #  print("heeeeee")
             self.hitSide="Left"
         elif player.attack and (player.x<=enemy.x+enemy.width+5 and player.x>= enemy.x) and self.hitSide !="Left" :
             self.x=player.x-player.width/2
@@ -1035,28 +944,22 @@ class enemy():
             self.hit=True
            # player.x+=6a
            # win.blit(AmHit,(self.x,self.y))
-          #  print("hooooo")
             punch.play()
             self.hitSide="Right"
         if self.hit:
-            print("Sekai",self.hitCount)
             self.hitCount+=1
         if self.hitCount==30:
             self.hitCount=0     
             self.hit=False
             self.hitSide=None
-            print("Im Pickle Rick!!")
 
     def AIControls(self):
         if abs(player.x-enemy.x)<=99.9999 and self.status != "Done":
             self.status="Alert"
         if abs(player.x-enemy.x)>100 and self.status != "Done":
             self.status="Free"
-        print("erfgdbhgewfdgrewfde")
         choice=random.randint(0,2)
-        print("Heeeehaaaaw",self.action,self.moveCount)
         if abs(player.x-enemy.x)>100 and self.moveCount%10==0 and self.status=="Free":
-            print("CHHAAAAAANGE")
             self.action=self.possibleMoves[choice]
             self.moveCount=1
         if self.status=="Alert":
@@ -1129,7 +1032,6 @@ def drawAll():
           #  pygame.draw.polygon(win, (0, 0, 0), ((0, 100), (0, 200), (200, 200), (200, 300), (300, 150), (200, 0), (200, 100)))
             pygame.display.update()
     if GameStatus=="Game":
-       # print("MAGNEDGA!!!")
        # bg=pygame.image.load("bg.png")
         win.blit(bg,(0,0))
         if musicCount==0:
@@ -1194,7 +1096,6 @@ def drawAll():
                         enemy.Fall=True 
                         enemy.hit=False
             enemy.status="Done1"
-            print("Okkeeeee")
             win.blit(text1, (150, 230))
             enemy.Fall=True
            ## player.draw(win)
@@ -1229,7 +1130,6 @@ def drawAll():
                              #   self.y=enemy.fallYList[count]
                              #   win.blit(AmFall,(self.x,self.y))
                               #  pygame.display.update()
-            #print("I AM FINALLY DONE")
            # player.Fall=True 
            # player.hit=False
             enemy.status="Done"
@@ -1277,19 +1177,17 @@ text3=font.render("Choose Your Character",True,(235,0,235))
 Titlefont = pygame.font.SysFont('comicsans', 65, True, True)
 Title=Titlefont.render("WorldWide Brawl!",True,(0,0,0))
 smallFont=pygame.font.SysFont("comicsans",25,True, True)
-instructionText=smallFont.render("Press Enter to continue",True,(125,0,100))
+instructionText=smallFont.render("Press Spacebar to continue",True,(125,0,100))
 #win.blit(Title,(250,450))
 run=True
 
 while run:
-  #  print("jknkj", enemy.attackDone)
     keys = pygame.key.get_pressed()
    # if player.walkCount>5:
     #    player.walkCount=5
     if GameStatus=="Title":
        # Title=font.render("WorlWide Brawl!",True,(255,255,255))
         bg=titleScreen
-        print("heyyyy")
         win.blit(bg,(0,0))
         win.blit(Title,(75,175))
         win.blit(instructionText,(150,420))
@@ -1298,7 +1196,6 @@ while run:
             if keys[pygame.K_SPACE]:
                 win.fill((0,0,0))
                 GameStatus="Game"#Menu
-                print("Lets goioo")
        # drawAll()
     elif GameStatus=="Menu":
         bg=earth
@@ -1308,8 +1205,6 @@ while run:
         for event in pygame.event.get():
             if keys[pygame.K_SPACE]:
                 GameStatus="Game"
-                print("Lets goioo")
-        print("Menu")
     elif GameStatus=="Game":
         pygame.time.delay(20)
         
@@ -1354,10 +1249,8 @@ while run:
             player.y+=player.vel
         
         if keys[pygame.K_SPACE] and not player.Fall and not player.backUp and not player.hit and player.attackBreak%20==0:
-            print("IIII<<<<<",player.attackDone,player.attackNum)
             
             if player.attackDone==True and player.attackNum>0:
-                print("U<<<<<")
                 player.attack=True
                 player.standing=True
                 player.attackDone=False
@@ -1397,7 +1290,6 @@ while run:
      
         if player.attackCount>0:
             player.attackCount+=1
-           # print("Yooo", player.attackCount,player.attackNum)
             
         ## Enemey
         
@@ -1430,7 +1322,6 @@ while run:
         
         if (keys[pygame.K_j] or enemy.action=="j") and not enemy.hit and not enemy.Fall and not enemy.backUp and enemy.attackBreak%50==0:
            
-           # print(enemy.attackNum,enemy.attackDone)
             #print(player.attackCount,player.attackNum,player.attackDone)
             if enemy.attackDone==True and enemy.attackNum>0:
                 
@@ -1439,9 +1330,7 @@ while run:
                 enemy.attackDone=False
                 enemy.attackCount=0
                 enemy.attackCount+=1
-                enemy.attackNum+=1
-             #   print(enemy.wasLeft,enemy.attack,enemy.standing)
-               
+                enemy.attackNum+=1               
             
              
             
@@ -1464,7 +1353,6 @@ while run:
             enemy.attackCount+=1
         print(enemy.damage)
         
-       # print(enemy.Left,enemy.Right,enemy.wasLeft,enemy.wasRight, enemy.attack, enemy.standing)
     if Game!="Over":
         drawAll()
     if enemy.status=="Done" :
