@@ -22,5 +22,5 @@ P1 : Move using arrow keys
 P2 is currently a cpu and will move on its own
 This progect is a work in progress and is not yet complete, players can b pushed off boundaries during attacks
 
-# Sources
+# Demonstration
 
